@@ -13,18 +13,24 @@ namespace HelpDeskTicket.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
+        //ctor, brings in iLogger of type HomeController
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
         }
 
+        //default action 
         public IActionResult Index()
         {
+            //View() will return:  [the name of the method].cshtml
+            //AKA, index.cshtml
             return View();
         }
 
         public IActionResult Privacy()
         {
+            //View() will return:  [the name of the method].cshtml
+            //AKA, privacy.cshtml
             return View();
         }
 
