@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using HelpDeskTicket.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HelpDeskTicket.Controllers
 {
@@ -20,6 +21,7 @@ namespace HelpDeskTicket.Controllers
         }
 
         //default action 
+        [Authorize]
         public IActionResult Index()
         {
             //View() will return:  [the name of the method].cshtml
