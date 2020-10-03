@@ -318,6 +318,8 @@ section {
 .main-content {
     padding-top: 116px;
     min-height: 100vh;
+    /*trying to attach background img onto login*/
+    /*background-image: url(../images/MacbookBackground.jpg);*/
 }
 
 @media (max-width: 991px) {

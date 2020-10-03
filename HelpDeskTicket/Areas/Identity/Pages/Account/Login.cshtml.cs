@@ -18,10 +18,12 @@ namespace HelpDeskTicket.Areas.Identity.Pages.Account
     [AllowAnonymous]
     public class LoginModel : PageModel
     {
+        //private tools from the Identity framework
         private readonly UserManager<Employee> _userManager;
         private readonly SignInManager<Employee> _signInManager;
         private readonly ILogger<LoginModel> _logger;
 
+        //ctor
         public LoginModel(SignInManager<Employee> signInManager, 
             ILogger<LoginModel> logger,
             UserManager<Employee> userManager)
@@ -33,6 +35,7 @@ namespace HelpDeskTicket.Areas.Identity.Pages.Account
 
         [BindProperty]
         public InputModel Input { get; set; }
+
 
         public IList<AuthenticationScheme> ExternalLogins { get; set; }
 
