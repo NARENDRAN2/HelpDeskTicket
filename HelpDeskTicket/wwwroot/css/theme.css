@@ -286,9 +286,10 @@ section {
     padding-bottom: 12vh;
 }
 }
+
 .page-container {
     background: #e5e5e5;
-    padding-left: 300px;
+    padding-left:0px;
 }
 
 @media (max-width: 991px) {
@@ -301,7 +302,7 @@ section {
 
 .page-container2 {
     background: #f2f2f2;
-    padding-left: 300px;
+    padding-left: 0px;
 }
 
 @media (max-width: 991px) {
@@ -318,8 +319,14 @@ section {
 .main-content {
     padding-top: 116px;
     min-height: 100vh;
-    /*trying to attach background img onto login*/
-    /*background-image: url(../images/MacbookBackground.jpg);*/
+}
+
+html {
+    background-image: url("../images/MacbookBackground.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 @media (max-width: 991px) {
@@ -1191,7 +1198,6 @@ section {
     position: fixed;
     top: 0;
     right: 0;
-    left: 300px;
     height: 75px;
     z-index: 3;
 }
