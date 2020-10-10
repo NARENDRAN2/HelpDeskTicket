@@ -24,17 +24,22 @@ namespace HelpDeskTicket.Controllers
         [Authorize]
         public IActionResult Index()
         {
-            //View() will return:  [the name of the method].cshtml
-            //AKA, index.cshtml
+           
             return View();
         }
 
         public IActionResult Privacy()
         {
-            //View() will return:  [the name of the method].cshtml
-            //AKA, privacy.cshtml
+            
             return View();
         }
+
+        public IActionResult SubmitTicket()
+        {
+            
+            return View();
+        }
+
 
 
 

@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "SubmitTicket";
+}
+
+    <div class="card">
+        <div class="submit-form">
+            <div class="card-header">
+                <strong>Submit</strong> Ticket
+            </div>
+
+            <form action="">
+
+                <!--name-->
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="submit-name-input" class=" form-control-label">Your Name</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <input type="password" id="name-input" name="name-input" placeholder="Name" class="form-control">
+                        <small class="help-block form-text">Please enter your name</small>
+                    </div>
+                </div>
+
+                <!--title-->
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="submit-title-input" class=" form-control-label">Title</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <input type="title" id="title-input" name="title-input" placeholder="Title" class="form-control">
+                        <small class="help-block form-text">Please give this ticket a title</small>
+                    </div>
+                </div>
+
+                <!--ticket info-->
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="ticket-content-input" class=" form-control-label">Content</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <grammarly-extension style="position: absolute; top: 0px; left: 0px; pointer-events: none;" class="_1KJtL"></grammarly-extension>
+                        <textarea name="submit-content-input" id="submit-content-input" rows="9" placeholder="Please describe your issue" class="form-control" spellcheck="false"></textarea>
+                    </div>
+                </div>
+
+                <div class="col col-sm-5">
+                    <label for="chooseFile">Attachment:</label>
+                    <input accept="image/*" type="File" /><br>
+                </div>
+
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary btn-sm">
+                        <i class="fa fa-dot-circle-o"></i> Submit
+                    </button>
+                    <button type="reset" class="btn btn-danger btn-sm">
+                        <i class="fa fa-ban"></i> Reset
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
