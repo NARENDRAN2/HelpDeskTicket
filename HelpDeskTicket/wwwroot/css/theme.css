@@ -14661,7 +14661,7 @@ section {
 }
 
 /*index.cshtml*/
-.landing-page-wrapper {
+.index-page-wrapper {
     background-color: #fff;
     width: 500px;
     height: 290px;
@@ -14670,10 +14670,10 @@ section {
     display: inline-flex;
 }
 
-#landing-page-my-tickets {
+#index-page-my-tickets {
     width: 225px;
 }
 
-#landing-page-dashboard {
+#index-page-dashboard {
     width: 225px;
 }
