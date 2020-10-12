@@ -10,14 +10,20 @@
 
             <form action="">
 
-                <!--name-->
+                <!--department category-->
                 <div class="row form-group">
                     <div class="col col-md-3">
-                        <label for="submit-name-input" class=" form-control-label">Your Name</label>
+                        <label for="select" class=" form-control-label">Select Department</label>
                     </div>
                     <div class="col-12 col-md-9">
-                        <input type="password" id="name-input" name="name-input" placeholder="Name" class="form-control">
-                        <small class="help-block form-text">Please enter your name</small>
+                        <select name="select" id="select" class="form-control">
+                            <option value="0">Select Department</option>
+                            <option value="1">HR</option>
+                            <option value="2">Finance</option>
+                            <option value="3">IT</option>
+                            <option value="4">Administrative</option>
+                            <option value="5">Commercial</option>
+                        </select>
                     </div>
                 </div>
 
@@ -49,7 +55,7 @@
                 </div>
 
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-primary btn-sm">
+                    <button type="submit" class="btn btn-primary btn-sm" asp-action="TicketSubmitted">
                         <i class="fa fa-dot-circle-o"></i> Submit
                     </button>
                     <button type="reset" class="btn btn-danger btn-sm">

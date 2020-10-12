@@ -14,19 +14,15 @@ namespace HelpDeskTicket.Models
 
         public void AddFAQ()
         {
-            //default code for now
         }
         public void DeleteFAQ(int Id)
         {
-            //default code for now
         }
         public void SearchFAQ(int Id)
         {
-            //default code for now
         }
-        public void EditTicket(int Id)
+        public void EditFAQ(int Id)
         {
-            //default code for now
         }
     }
 }
