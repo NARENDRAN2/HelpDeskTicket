@@ -14661,8 +14661,7 @@ section {
 }
 
 /*index.cshtml*/
-.index-page-wrapper {
-    background-color: #fff;
+#ticket-and-dashboard-container {
     width: 500px;
     height: 290px;
     margin-left: 100px;
@@ -14672,8 +14671,11 @@ section {
 
 #index-page-my-tickets {
     width: 225px;
+    height:225px;
 }
 
 #index-page-dashboard {
     width: 225px;
+    height: 225px;
 }
+

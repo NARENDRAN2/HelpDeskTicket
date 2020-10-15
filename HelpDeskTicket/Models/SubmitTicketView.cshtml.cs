@@ -8,10 +8,15 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 namespace HelpDeskTicket.Models
 {
     public class SubmitTicketViewModel : PageModel
-    {       
-        public string department { get; set; }
-        public string title { get; set; }
-        public string content { get; set; }
+    {
+        public string Name { get; set; }
+        public string Department { get; set; }
+        public string Title { get; set; }
+        public string Content { get; set; }
+        //isResolved will be false by default untill set to true
+        public bool isResolved { get; set; }
         public dynamic Attachment { get; set; }
+        //will need DateTime to post onto mytickets view
+        public DateTime DateTime { get; set; }
     }
 }
