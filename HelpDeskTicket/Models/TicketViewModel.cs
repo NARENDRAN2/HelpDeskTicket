@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace HelpDeskTicket.Models
 {
+    //take this and use it as a template for finishing Ticket.cs
     public class TicketViewModel
     {
         public int Ticket_Id { get; set; }

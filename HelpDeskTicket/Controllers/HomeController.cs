@@ -20,7 +20,6 @@ namespace HelpDeskTicket.Controllers
             _logger = logger;
         }
 
-        //default action 
         [Authorize]
         public IActionResult Index()
         {           

@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace HelpDeskTicket.Controllers
 {
-    public class TicketController : Controller
+    public class AdminController : Controller
     {
         public IActionResult Index()
         {

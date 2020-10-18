@@ -333,7 +333,6 @@ section {
 }
 
 .page-content--bge5 {
-    background: #e5e5e5;
     height: 100vh;
 }
 
@@ -14662,8 +14661,8 @@ section {
 
 /*index.cshtml*/
 #ticket-and-dashboard-container {
-    width: 500px;
-    height: 290px;
+    width: 450px;
+    height: 450px;
     margin-left: 100px;
     margin-right: 100px;
     display: inline-flex;
@@ -14678,4 +14677,3 @@ section {
     width: 225px;
     height: 225px;
 }
-

@@ -4,14 +4,16 @@ using HelpDeskTicket.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HelpDeskTicket.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201018201633_TicketsTableAttributes")]
+    partial class TicketsTableAttributes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -111,8 +113,8 @@ namespace HelpDeskTicket.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TicketDescription")
-                        .HasColumnType("nvarchar(225)")
-                        .HasMaxLength(225);
+                        .HasColumnType("nvarchar(200)")
+                        .HasMaxLength(200);
 
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
