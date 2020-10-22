@@ -7,22 +7,36 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using HelpDeskTicket.Data;
 using HelpDeskTicket.Models;
+using Microsoft.AspNetCore.Http;
+using System.IO;
+using Microsoft.AspNetCore.Identity;
 
 namespace HelpDeskTicket.Controllers
 {
     public class TicketsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<Employee> _userManager;
 
-        public TicketsController(ApplicationDbContext context)
+        public TicketsController(ApplicationDbContext context, UserManager<Employee> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: Tickets
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Tickets.ToListAsync());
+            var tickets = await _context.Tickets.ToListAsync();
+            var ticketModels = tickets.Select(ticket => new TicketModel
+            {
+                Department = ticket.Department,
+                Title = ticket.Title,
+                TicketDescription = ticket.TicketDescription,
+                Id = ticket.Id
+            });
+
+            return View(ticketModels);
         }
 
         // GET: Tickets/Details/5
@@ -54,15 +68,40 @@ namespace HelpDeskTicket.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,TicketDescription")] Ticket ticket)
+        public async Task<IActionResult> Create(TicketModel ticketModel)
         {
             if (ModelState.IsValid)
             {
+                var email = HttpContext.User.Identity.Name;
+                var employee = await _userManager.FindByNameAsync(email);
+
+                var ticket = new Ticket
+                {
+                    Department = ticketModel.Department,
+                    Title = ticketModel.Title,
+                    TicketDescription = ticketModel.TicketDescription,
+                    CreatedDate = DateTime.Now,
+                    Status = TicketStatus.Unresolved,
+                    Employee_Id = employee.EmployeeId
+                };
+
+                if (ticketModel.Attachment != null)
+                {
+                    var attachment = ticketModel.Attachment;
+                    using(var ms = new MemoryStream())
+                    {
+                        attachment.CopyTo(ms);
+                        ticket.Attachment = ms.ToArray();
+                        ticket.AttachmentName = Path.GetFileNameWithoutExtension(attachment.FileName);
+                        ticket.AttachmentExtension = Path.GetExtension(attachment.FileName);
+                    }
+                }
+
                 _context.Add(ticket);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(ticket);
+            return View(ticketModel);
         }
 
         // GET: Tickets/Edit/5
@@ -86,34 +125,34 @@ namespace HelpDeskTicket.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,TicketDescription")] Ticket ticket)
+        public async Task<IActionResult> Edit(int id, TicketModel ticketModel)
         {
-            if (id != ticket.Id)
+            if (id != ticketModel.Id)
             {
                 return NotFound();
             }
 
             if (ModelState.IsValid)
             {
-                try
-                {
-                    _context.Update(ticket);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!TicketExists(ticket.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+                //try
+                //{
+                //    _context.Update(ticket);
+                //    await _context.SaveChangesAsync();
+                //}
+                //catch (DbUpdateConcurrencyException)
+                //{
+                //    if (!TicketExists(ticket.Id))
+                //    {
+                //        return NotFound();
+                //    }
+                //    else
+                //    {
+                //        throw;
+                //    }
+                //}
+                //return RedirectToAction(nameof(Index));
             }
-            return View(ticket);
+            return View(ticketModel);
         }
 
         // GET: Tickets/Delete/5
