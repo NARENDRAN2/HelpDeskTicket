@@ -31,22 +31,6 @@ namespace HelpDeskTicket.Controllers
             return View();
         }
 
-        public IActionResult SubmitTicketView()
-        {            
-            return View();
-        }
-
-        public IActionResult TicketSubmitted(/*int TicketID*/)
-        {
-            //once ticket submission goes through, make sure to tell user, to display ticket number, and update my tickets view 
-            return RedirectToAction("Index");
-        }
-
-        public IActionResult EmployeeMyTicketsView()
-        {
-            return View("EmployeeMyTicketsView");
-        }
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

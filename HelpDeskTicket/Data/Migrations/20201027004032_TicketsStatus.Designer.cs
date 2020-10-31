@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HelpDeskTicket.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201021015754_TicketsConnectingDB")]
-    partial class TicketsConnectingDB
+    [Migration("20201027004032_TicketsStatus")]
+    partial class TicketsStatus
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -40,15 +40,16 @@ namespace HelpDeskTicket.Data.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<string>("EmployeeId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(30)")
+                        .HasMaxLength(30);
 
                     b.Property<string>("NormalizedEmail")
                         .HasColumnType("nvarchar(256)")
@@ -110,9 +111,6 @@ namespace HelpDeskTicket.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Department")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Employee_Id")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Employee_Name")

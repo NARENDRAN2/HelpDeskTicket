@@ -10,24 +10,26 @@ namespace HelpDeskTicket.Models
 {
     public class Ticket
     {
-        public int Id { get; set; }
-        public int Employee_Name { get; set; }
-        public string Employee_Id { get; set; }
+        public string EmployeeId { get; set; }
+        public string EmployeeName { get; set; }
         public string Department { get; set; }
         public string Title { get; set; }
 
         [StringLength(225)]
-        public string TicketDescription { get; set; }
+        public string TicektDescription { get; set; }
         public byte[] Attachment { get; set; }
         public string AttachmentName { get; set; }
         public string AttachmentExtension { get; set; }
         public DateTime CreatedDate { get; set; }
+
+        [Required]
         public TicketStatus Status { get; set; } 
     }
 
     public enum TicketStatus
     {
         Resolved,
+        InProgress,
         Unresolved
     }
 }

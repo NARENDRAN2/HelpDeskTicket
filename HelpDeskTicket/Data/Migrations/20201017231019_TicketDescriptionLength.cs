@@ -7,7 +7,7 @@ namespace HelpDeskTicket.Data.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AlterColumn<string>(
-                name: "TicketDescription",
+                name: "TicektDescription",
                 table: "Tickets",
                 maxLength: 200,
                 nullable: true,
@@ -19,7 +19,7 @@ namespace HelpDeskTicket.Data.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AlterColumn<string>(
-                name: "TicketDescription",
+                name: "TicektDescription",
                 table: "Tickets",
                 type: "nvarchar(max)",
                 nullable: true,

@@ -15,5 +15,6 @@ namespace HelpDeskTicket.Data
         }
 
         public DbSet<Ticket> Tickets { get; set; }
+
     }
 }

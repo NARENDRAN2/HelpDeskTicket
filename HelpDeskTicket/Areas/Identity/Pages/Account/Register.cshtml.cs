@@ -47,8 +47,8 @@ namespace HelpDeskTicket.Areas.Identity.Pages.Account
         public class InputModel
         {
             [Required]
-            [Display(Name = "Employee ID")]
-            public string EmployeeId { get; set; }
+            [Display(Name = "Full Name")]
+            public string Name { get; set; }
 
             [Required]
             [EmailAddress]
@@ -79,7 +79,7 @@ namespace HelpDeskTicket.Areas.Identity.Pages.Account
             //ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new Employee { EmployeeId = Input.EmployeeId, UserName = Input.Email, Email = Input.Email };
+                var user = new Employee { Name = Input.Name, UserName = Input.Email, Email = Input.Email };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {

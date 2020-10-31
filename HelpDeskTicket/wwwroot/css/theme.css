@@ -14660,6 +14660,13 @@ section {
 }
 
 /*index.cshtml*/
+#submit-tickets /*, #unresolved-tickets, #tickets-in-progress, #my-tickets */ {
+    width: 290.5px;
+    height: 290.5px;
+    display: inline-flex
+}
+
+/*index.cshtml*/
 #ticket-and-dashboard-container {
     width: 450px;
     height: 450px;

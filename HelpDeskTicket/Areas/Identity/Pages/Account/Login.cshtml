@@ -1,5 +1,8 @@
 ﻿@page
 @model LoginModel
+@namespace Area._Areas_Identity_Pages_Account_Login
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
 
 <h1>@ViewData["Title"]</h1>
 <!DOCTYPE html>
@@ -41,7 +44,7 @@
 
 <div>
     <style>
-        .main-content { 
+        .main-content {
             background-image: url(/images/MacbookBackground.jpg);
         }
     </style>
@@ -82,7 +85,7 @@
                             <div class="register-link">
                                 <p>
                                     Don't you have account?
-                                    <a href="#">Sign Up Here</a>
+                                    <a asp-controller="Employee" asp-action="Register">Sign Up Here</a>
                                 </p>
                             </div>
                         </div>

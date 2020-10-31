@@ -112,7 +112,7 @@ namespace HelpDeskTicket.Data.Migrations
                     b.Property<string>("Status")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("TicketDescription")
+                    b.Property<string>("TicektDescription")
                         .HasColumnType("nvarchar(225)")
                         .HasMaxLength(225);
 

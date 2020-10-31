@@ -25,6 +25,7 @@ namespace HelpDeskTicket.Controllers
         }
 
         // GET: Tickets
+        //[Microsoft.AspNetCore.Authorization.Authorize]
         public async Task<IActionResult> Index()
         {
             var tickets = await _context.Tickets.ToListAsync();
@@ -32,7 +33,7 @@ namespace HelpDeskTicket.Controllers
             {
                 Department = ticket.Department,
                 Title = ticket.Title,
-                TicketDescription = ticket.TicketDescription,
+                TicketDescription = ticket.TicektDescription,
                 Id = ticket.Id
             });
 
@@ -70,6 +71,8 @@ namespace HelpDeskTicket.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(TicketModel ticketModel)
         {
+            //if TicketModel is valid, take all data from the ticektModel and 
+            //store it into the DB.
             if (ModelState.IsValid)
             {
                 var email = HttpContext.User.Identity.Name;
@@ -79,10 +82,11 @@ namespace HelpDeskTicket.Controllers
                 {
                     Department = ticketModel.Department,
                     Title = ticketModel.Title,
-                    TicketDescription = ticketModel.TicketDescription,
+                    TicektDescription = ticketModel.TicketDescription,
                     CreatedDate = DateTime.Now,
                     Status = TicketStatus.Unresolved,
-                    Employee_Id = employee.EmployeeId
+                    //Employee_Id = employee.EmployeeId,
+                    
                 };
 
                 if (ticketModel.Attachment != null)
@@ -156,6 +160,7 @@ namespace HelpDeskTicket.Controllers
         }
 
         // GET: Tickets/Delete/5
+        
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

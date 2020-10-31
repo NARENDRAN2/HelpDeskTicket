@@ -10,6 +10,7 @@ namespace HelpDeskTicket.Models
     public class Employee : IdentityUser
     {
         [Required]
-        public string EmployeeId { get; set; }
+        [StringLength(30)]
+        public string Name { get; set; }
     }
 }

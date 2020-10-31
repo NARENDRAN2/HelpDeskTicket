@@ -15,7 +15,7 @@ namespace HelpDeskTicket.Data.Migrations
                 oldMaxLength: 45);
 
             migrationBuilder.AlterColumn<string>(
-                name: "TicketDescription",
+                name: "TicektDescription",
                 table: "Tickets",
                 maxLength: 225,
                 nullable: true,
@@ -43,7 +43,7 @@ namespace HelpDeskTicket.Data.Migrations
                 oldNullable: true);
 
             migrationBuilder.AlterColumn<string>(
-                name: "TicketDescription",
+                name: "TicektDescription",
                 table: "Tickets",
                 type: "nvarchar(225)",
                 maxLength: 225,

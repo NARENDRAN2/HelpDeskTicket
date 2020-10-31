@@ -97,7 +97,7 @@ namespace HelpDeskTicket.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("TicketDescription")
+                    b.Property<string>("TicektDescription")
                         .HasColumnType("nvarchar(200)")
                         .HasMaxLength(200);
 

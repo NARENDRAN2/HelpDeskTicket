@@ -38,15 +38,16 @@ namespace HelpDeskTicket.Data.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<string>("EmployeeId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(30)")
+                        .HasMaxLength(30);
 
                     b.Property<string>("NormalizedEmail")
                         .HasColumnType("nvarchar(256)")
@@ -110,18 +111,15 @@ namespace HelpDeskTicket.Data.Migrations
                     b.Property<string>("Department")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Employee_Id")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("TicektDescription")
+                        .HasColumnType("nvarchar(225)")
+                        .HasMaxLength(225);
 
                     b.Property<int>("Employee_Name")
                         .HasColumnType("int");
 
                     b.Property<int>("Status")
                         .HasColumnType("int");
-
-                    b.Property<string>("TicketDescription")
-                        .HasColumnType("nvarchar(225)")
-                        .HasMaxLength(225);
 
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
