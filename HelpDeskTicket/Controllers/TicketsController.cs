@@ -85,6 +85,7 @@ namespace HelpDeskTicket.Controllers
                     TicektDescription = ticketModel.TicketDescription,
                     CreatedDate = DateTime.Now,
                     Status = TicketStatus.Unresolved,
+                    
                     //Employee_Id = employee.EmployeeId,
                     
                 };
