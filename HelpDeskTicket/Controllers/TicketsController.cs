@@ -33,7 +33,7 @@ namespace HelpDeskTicket.Controllers
             {
                 Department = ticket.Department,
                 Title = ticket.Title,
-                TicketDescription = ticket.TicektDescription,
+                TicketDescription = ticket.TicketDescription,
                 Id = ticket.Id
             });
 
@@ -82,14 +82,13 @@ namespace HelpDeskTicket.Controllers
                 {
                     Department = ticketModel.Department,
                     Title = ticketModel.Title,
-                    TicektDescription = ticketModel.TicketDescription,
+                    TicketDescription = ticketModel.TicketDescription,
                     CreatedDate = DateTime.Now,
                     Status = TicketStatus.Unresolved,
-                    
-                    //Employee_Id = employee.EmployeeId,
-                    
-                };
-
+                    EmployeeId = employee.Id,
+                    EmployeeName = employee.Name
+                }; 
+                            
                 if (ticketModel.Attachment != null)
                 {
                     var attachment = ticketModel.Attachment;
@@ -194,5 +193,8 @@ namespace HelpDeskTicket.Controllers
         {
             return _context.Tickets.Any(e => e.Id == id);
         }
-    }
+
+        public IActionResult MyTickets(Employee employee) => View();
+        
+    }    
 }

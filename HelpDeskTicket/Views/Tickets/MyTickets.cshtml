@@ -1,5 +1,95 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model HelpDeskTicket.Models.TicketModel
+
 @{
+    ViewData["Title"] = "MyTickets";
 }
+
+<div class="col-md-12">
+    <h3 class="title-5 m-b-35">My Tickets</h3>
+    <div class="table-data__tool">
+        <div class="table-data__tool-left">
+            <div class="rs-select2--light rs-select2--md">
+                <select class="js-select2 select2-hidden-accessible" name="property" tabindex="-1" aria-hidden="true">
+                    <option selected="selected">All Properties</option>
+                    <option value="">Option 1</option>
+                    <option value="">Option 2</option>
+                </select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 130px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-property-kp-container"><span class="select2-selection__rendered" id="select2-property-kp-container" title="All Properties">All Properties</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                <div class="dropDownSelect2"></div>
+            </div>
+            <div class="rs-select2--light rs-select2--sm">
+                <select class="js-select2 select2-hidden-accessible" name="time" tabindex="-1" aria-hidden="true">
+                    <option selected="selected">Today</option>
+                    <option value="">3 Days</option>
+                    <option value="">1 Week</option>
+                </select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 80px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-time-85-container"><span class="select2-selection__rendered" id="select2-time-85-container" title="Today">Today</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                <div class="dropDownSelect2"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive table-responsive-data2">
+        <table class="table table-data2">
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>department</th>
+                    <th>title</th>
+                    <th>date</th>
+                    <th>status</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="tr-shadow">
+                    <td>Lori Lynch</td>
+                    <td>
+                        <span class="block-email">HR</span>
+                    </td>
+                    <td class="desc">Desktop not working</td>
+                    <td>2018-09-27 02:12</td>
+                    <td>
+                        <span class="status--process">Resolved</span>
+                    </td>
+                </tr>
+                <tr class="spacer"></tr>
+                <tr class="tr-shadow">
+                    <td>Amy Heineman</td>
+                    <td>
+                        <span class="block-email">IT</span>
+                    </td>
+                    <td class="desc">Desktop not turning on</td>
+                    <td>2018-09-29 05:57</td>
+                    <td>
+                        <span class="status--process">Resolved</span>
+                    </td>
+                </tr>
+                <tr class="spacer"></tr>
+                <tr class="tr-shadow">
+
+                    <td>Dr. Tenma</td>
+                    <td>
+                        <span class="block-email">Administrative</span>
+                    </td>
+                    <td class="desc">Blue screen of death</td>
+                    <td>2018-09-25 19:03</td>
+                    <td>
+                        <span class="status--denied">Being Processed</span>
+                    </td>
+                </tr>
+                <tr class="spacer"></tr>
+                <tr class="tr-shadow">
+                    <td>William Panske</td>
+                    <td>
+                        <span class="block-email">IT</span>
+                    </td>
+                    <td class="desc">Blue screen of death</td>
+                    <td>2018-09-24 19:10</td>
+                    <td>
+                        <span class="status--process">Resolved</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+

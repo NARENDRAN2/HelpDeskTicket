@@ -12,11 +12,11 @@ namespace HelpDeskTicket.Models
     {
         public string EmployeeId { get; set; }
         public string EmployeeName { get; set; }
+        public int Id { get; set; }
         public string Department { get; set; }
         public string Title { get; set; }
-
         [StringLength(225)]
-        public string TicektDescription { get; set; }
+        public string TicketDescription { get; set; }
         public byte[] Attachment { get; set; }
         public string AttachmentName { get; set; }
         public string AttachmentExtension { get; set; }
