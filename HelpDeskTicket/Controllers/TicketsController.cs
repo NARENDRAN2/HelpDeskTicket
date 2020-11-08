@@ -40,7 +40,7 @@ namespace HelpDeskTicket.Controllers
             return View(ticketModels);
         }
 
-        // GET: Tickets/Details/5
+        // GET: Tickets/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -195,6 +195,5 @@ namespace HelpDeskTicket.Controllers
         }
 
         public IActionResult MyTickets(Employee employee) => View();
-        
-    }    
+    }
 }

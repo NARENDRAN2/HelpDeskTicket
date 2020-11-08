@@ -1,4 +1,6 @@
-﻿@{
+﻿@model HelpDeskTicket.Models.TicketModel
+
+@{
     ViewData["Title"] = "Index";
 }
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
@@ -20,15 +22,15 @@
                     <div class="card-header">
                         <strong>Submit</strong> Tickets
                     </div>
-                
+
                     <div class="container">
                         <div class="row justify-content-center">
-                        <a asp-controller="Tickets" asp-action="Create" class="btn btn-primary">Submit</a>
+                            <a asp-controller="Tickets" asp-action="Create" class="btn btn-primary">Submit</a>
                         </div>
                     </div>
                 </div>
             </div>
-                
+
             <div class="col-lg-3">
                 <div class="card" id="unresolved-tickets">
                     <div class="card-header">
@@ -68,7 +70,7 @@
                     </div>
                     <div class="container">
                         <div class="row justify-content-center">
-                            <a asp-controller="Tickets" asp-action="Details" class="btn btn-primary">View</a>
+                            <a asp-controller="Tickets" asp-action="MyTickets" class="btn btn-primary">View</a>
                         </div>
                     </div>
                 </div>
