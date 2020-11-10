@@ -2,7 +2,10 @@
 
 @{
     ViewData["Title"] = "Create";
+    await Component.InvokeAsync("NavBar");
+
 }
+
 
 <h1>Create</h1>
 
@@ -30,7 +33,7 @@
             <div class="form-group">
                 <label asp-for="Attachment" class="control-label"></label>
                 <!--<input asp-for="Attachment" class="form-control" />
-        <span asp-validation-for="Attachment" class="text-danger"></span>-->
+                <span asp-validation-for="Attachment" class="text-danger"></span>-->
                 <input accept="image/*" type="file" asp-for="Attachment" /><br>
             </div>
 
