@@ -17,33 +17,39 @@
         <h1 class="display-4">Welcome</h1>
     </div>
 
+    <style>
+
+
+
+
+    </style>
+
     <div class="container" id="dashboard">
 
 
         <!--BEGINNING FOUR CARDS CONTAINER-->
-        <div class="row justify-content-center align-items-center" id="four-cards-container">
-            <div class="col-lg-3">
-                <div class="card" id="submit-tickets">
+        <div class="row mx-0" id="four-cards-container">
+            <div class="col-md-3 col-12">
+                <div class="card ticket-item-box" id="submit-tickets">
                     <div class="card-header">
                         <strong>Submit</strong> Tickets
                     </div>
 
                     <div class="container">
-                        <div class="row justify-content-center">
+                        <div class="row justify-content-center my-4">
                             <a asp-controller="Tickets" asp-action="Create" class="btn btn-primary">Submit</a>
                         </div>
                     </div>
                 </div>
             </div>
 
-
-            <div class="col-lg-3">
-                <div class="card" id="unresolved-tickets">
+            <div class="col-md-3 col-12">
+                <div class="card ticket-item-box" id="unresolved-tickets">
                     <div class="card-header">
                         <strong>Unresolved</strong> Tickets
                     </div>
-                    <div class="container" id="index-page-unresolved-tickets>
-                        <div class="row justify-content-center">
+                    <div class="container" id="index-page-unresolved-tickets">
+                        <div class="row justify-content-center my-4">
                             <div class="stat-digit">
                                 <i class="fa fa-ticket" aria-hidden="true"></i>
                                 0
@@ -53,13 +59,13 @@
                 </div>
             </div>
 
-            <div class="col-lg-3">
-                <div class="card" id="tickets-in-progress">
+            <div class="col-md-3 col-12">
+                <div class="card ticket-item-box" id="tickets-in-progress">
                     <div class="card-header">
                         <strong>Tickets</strong> in progress
                     </div>
                     <div class="container">
-                        <div class="row justify-content-center">
+                        <div class="row justify-content-center my-4">
                             <div class="stat-digit">
                                 <i class="fa fa-ticket" aria-hidden="true"></i>
                                 0
@@ -69,13 +75,13 @@
                 </div>
             </div>
 
-            <div class="col-lg-3">
-                <div class="card" id="my-tickets">
+            <div class="col-md-3 col-12">
+                <div class="card ticket-item-box" id="my-tickets">
                     <div class="card-header">
                         <strong>My</strong> Tickets
                     </div>
                     <div class="container">
-                        <div class="row justify-content-center">
+                        <div class="row justify-content-center my-4">
                             <a asp-controller="Tickets" asp-action="MyTickets" class="btn btn-primary">View</a>
                         </div>
                     </div>
