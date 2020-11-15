@@ -14646,6 +14646,7 @@ section {
     padding-left: 30px;
 }
 
+/*==============================================================*/
 
 /*SubmitTicket.cshtml*/
 .submit-form {
@@ -14672,6 +14673,20 @@ section {
     margin-right: 100px;
     display: inline-flex;
 }
+
+/*index.cshtml*/
+#dashboard.container{
+    margin-top: 100px;
+}
+
+/*  Views/Create  */
+#create-tickets-card {
+    width: 100%;
+    background-color: white;
+    margin-left:25px;
+    margin-right:25px;
+}
+
 
 #index-page-my-tickets {
     width: 225px;
