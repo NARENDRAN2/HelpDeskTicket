@@ -10,6 +10,8 @@ using HelpDeskTicket.Models;
 using Microsoft.AspNetCore.Http;
 using System.IO;
 using Microsoft.AspNetCore.Identity;
+using PagedList;
+
 
 namespace HelpDeskTicket.Controllers
 {
@@ -26,9 +28,18 @@ namespace HelpDeskTicket.Controllers
 
         // GET: Tickets
         //[Microsoft.AspNetCore.Authorization.Authorize]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder, string currentFilter, string searchString, int? pageNumber)
         {
-            var tickets = await _context.Tickets.ToListAsync();
+            if (searchString != null)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            var tickets =  _context.Tickets;
             var ticketModels = tickets.Select(ticket => new TicketModel
             {
                 Department = ticket.Department,
@@ -36,6 +47,10 @@ namespace HelpDeskTicket.Controllers
                 TicketDescription = ticket.TicketDescription,
                 Id = ticket.Id
             });
+
+             int pageSize = 3;
+            return View(await PaginatedList<Ticket>.CreateAsync(tickets.AsNoTracking(), pageNumber ?? 1, pageSize));
+
 
             return View(ticketModels);
         }
