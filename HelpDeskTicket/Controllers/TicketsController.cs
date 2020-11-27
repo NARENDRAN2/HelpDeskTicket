@@ -49,10 +49,9 @@ namespace HelpDeskTicket.Controllers
             });
 
              int pageSize = 3;
-            return View(await PaginatedList<Ticket>.CreateAsync(tickets.AsNoTracking(), pageNumber ?? 1, pageSize));
-
-
-            return View(ticketModels);
+           
+                return View(await PaginatedList<Ticket>.CreateAsync(tickets.AsNoTracking(), pageNumber ?? 1, pageSize));
+                //return View(ticketModels);
         }
 
         // GET: Tickets/5
